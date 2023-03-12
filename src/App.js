@@ -1,23 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import SectionNews from './components/SectionNews/SectionNews';
+import SectionSearch from './components/SectionSearch/SectionSearch';
+import SectionPanels from './components/SectionPanels/SectionPanels';
+import {map} from './data/map'
+import {ether} from './data/ether'
+import {pops} from './data/pops'
+import {programTV} from './data/programTV'
+import {news} from './data/news'
+import {categories} from './data/categories'
+import {exchangeRates} from './data/exchangeRates'
+import {categoriesSearch} from './data/categoriesSearch'
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <SectionNews
+          categories={categories}
+          news={news}
+          exchangeRates={exchangeRates}
+        />
+        <SectionSearch
+          search={categoriesSearch}
+          advertising="Найдётся всё. Например, фаза луны сегодня"
+          logo="http//"
+        />
+        <SectionPanels
+          map ={map}
+          ether={ether}
+          programTV={programTV}
+          pops={pops}
+        />
     </div>
   );
 }
